@@ -12,7 +12,7 @@ if [ -d $writefile ]; then
 fi;
 
 
-mkdir -p $(dirname $writefile);
+mkdir -p $(dirname $writefile); # creating directories to avoid error response from touch 
 touch "$writefile";
 
 if [ $? -ne 0 ]; then
