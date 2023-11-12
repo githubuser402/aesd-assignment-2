@@ -25,6 +25,7 @@ else
 	WRITEDIR=/tmp/aeld-data/$3
 fi
 
+echo ${NUMFILES} ${NUMFILES};
 MATCHSTR="The number of files are ${NUMFILES} and the number of matching lines are ${NUMFILES}"
 
 echo "Writing ${NUMFILES} files containing string ${WRITESTR} to ${WRITEDIR}"
@@ -63,6 +64,7 @@ OUTPUTSTRING=$(./finder.sh "$WRITEDIR" "$WRITESTR")
 rm -rf /tmp/aeld-data
 
 set +e
+echo ${OUTPUTSTRING};
 echo ${OUTPUTSTRING} | grep "${MATCHSTR}"
 if [ $? -eq 0 ]; then
 	echo "success"
